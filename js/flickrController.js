@@ -9,6 +9,8 @@ function FlickrController($http){
   var self = this 
   this.newPhoto = {}
   self.all = []
+  self.images = []
+
 
 
   this.getPhoto = function(){
@@ -19,6 +21,7 @@ function FlickrController($http){
       var data = response.data.items
       angular.forEach(data, function(data, key){
       console.log(key, data)
+      self.images.push(data.media)
       self.all.push(data)
 
 

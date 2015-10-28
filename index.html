@@ -12,10 +12,11 @@
 <body ng-app='flickrApp' ng-controller='FlickrController as flickr'>
 <button ng-click='flickr.getPhoto()'></button>
 
-<!-- {{flickr.all}}
- --><ul ng-repeat='flickr in flickr.all'>
+<ul ng-repeat='flickr in flickr.all'>
   <li>{{flickr.title}} </li>
-  <img src="{{flickr.link}}">
+  <li>{{flickr.link}} </li>
+  <li>{{flickr.description}} </li>
+  <li><img src="{{flickr.media.m}}"> </li>
 </ul>
 
 </body>
