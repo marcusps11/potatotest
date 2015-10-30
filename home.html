@@ -1,0 +1,31 @@
+<div ng-app='flickrApp' ng-controller='FlickrController as flickr'>
+
+<h1>FLICKR YO</h1>
+
+  <input type='text'></input>
+  <button ng-click='flickr.getPhoto()'></button>
+
+
+
+  <div ng-hide="flickr.photo">
+    <div class="container">
+      <div class="row">
+        <div class=".col-md-6">
+          <ul ng-repeat='flickr in flickr.all'  >
+            <a><li><img id='{{$index}}' ng-click='$parent.flickr.showPhoto(this)'   click="goCats = !goCats"  src="{{flickr.media.m}}"> </li></a>
+            <a ui-sref-active='active' ui-sref='profile'><li>{{flickr.title}}</li></a>
+              <a href="{{flickr.link}}"><li>{{flickr.link}} </li></a>
+              <li>{{flickr.link}} </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <div id='profile'  ng-show="flickr.photo">
+    <img src="{{flickr.photo}}">
+    <a ng-click="flickr.photo = !flickr.photo"><button>Back</button></a>
+
+  </div>
+</div>
