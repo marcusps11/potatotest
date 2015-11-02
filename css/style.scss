@@ -1,5 +1,18 @@
-$primaryColor: #eeffcc;
-
 body {
-    background: $primaryColor;
+  background-color: snow;
+  div {
+    li {
+      background: green;
+    }
+    background: red;
+  }
+}
+
+img {
+  height:250px;
+  width:250px;
+}
+
+ul li {
+  list-style-type: none
 }

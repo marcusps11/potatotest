@@ -1,4 +1,15 @@
 body {
-  background: #eeffcc; }
+  background-color: snow; }
+  body div {
+    background: red; }
+    body div li {
+      background: green; }
+
+img {
+  height: 250px;
+  width: 250px; }
+
+ul li {
+  list-style-type: none; }
 
 /*# sourceMappingURL=style.css.map */

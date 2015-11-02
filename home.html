@@ -1,31 +1,48 @@
 <div ng-app='flickrApp' ng-controller='FlickrController as flickr'>
+  <div class='container'>
+    <div class='row'>
+      <div class="col-md-6">
+        <h1>FLICKR YO</h1>
 
-<h1>FLICKR YO</h1>
+        <input type='text'></input>
+        <button ng-click='flickr.getPhoto()'></button>
+        <div class="col-md-6">
+          <p>hello</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <input type='text'></input>
-  <button ng-click='flickr.getPhoto()'></button>
 
+  <div class='form-group'>
+    <form class="form-group" ng-submit='flickr.search(term)' >
+    <input type="text" placeholder="Find a Restaurant/food/activity" class='form-control' ng-model='term'>
+      <input type="submit" class="btn btn-default" value="Gimme">
+    </form>
+  </div>
 
 
   <div ng-hide="flickr.photo">
     <div class="container">
       <div class="row">
-        <div class=".col-md-6">
+        <div class="col-md-6">
           <ul ng-repeat='flickr in flickr.all'  >
-            <a><li><img id='{{$index}}' ng-click='$parent.flickr.showPhoto(this)'   click="goCats = !goCats"  src="{{flickr.media.m}}"> </li></a>
-            <a ui-sref-active='active' ui-sref='profile'><li>{{flickr.title}}</li></a>
-              <a href="{{flickr.link}}"><li>{{flickr.link}} </li></a>
-              <li>{{flickr.link}} </li>
+              <a><img id='{{$index}}' ng-click='$parent.flickr.showPhoto(this)' src="{{flickr.media.m}}"></a>
+              <a ui-sref-active='active' ui-sref='profile'>{{flickr.title}}</a>
+              <a href="{{flickr.link}}">{{flickr.link}}</a>
+              <li>{{flickr.published}}</li>
+              <a href="https://www.flickr.com/photos/{{flickr.author_id}}">Link to Authors Account</a>
             </ul>
-          </div>
         </div>
       </div>
     </div>
 
 
-  <div id='profile'  ng-show="flickr.photo">
-    <img src="{{flickr.photo}}">
-    <a ng-click="flickr.photo = !flickr.photo"><button>Back</button></a>
+    <div id='profile'  ng-show="flickr.photo">
+      <img src="{{flickr.photo}}">
+      <p>{{flickr.tags}}</p>
+      <a ng-click="flickr.photo = !flickr.photo"><button>Back</button></a>
 
+    </div>
   </div>
-</div>
+
