@@ -1,48 +1,51 @@
 <div ng-app='flickrApp' ng-controller='FlickrController as flickr'>
   <div class='container'>
     <div class='row'>
-      <div class="col-md-6">
-        <h1>FLICKR YO</h1>
+      <div class=class="text-center col-md-4 col-md-offset-4">
+        <h1>FLICKR </h1>
 
-        <input type='text'></input>
         <button ng-click='flickr.getPhoto()'></button>
-        <div class="col-md-6">
-          <p>hello</p>
-        </div>
       </div>
     </div>
-  </div>
 
 
-  <div class='form-group'>
-    <form class="form-group" ng-submit='flickr.search(term)' >
-    <input type="text" placeholder="Find a Restaurant/food/activity" class='form-control' ng-model='term'>
-      <input type="submit" class="btn btn-default" value="Gimme">
-    </form>
-  </div>
-
-
-  <div ng-hide="flickr.photo">
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
+        <div class='profile' ng-hide="flickr.photo">
           <ul ng-repeat='flickr in flickr.all'  >
-              <a><img id='{{$index}}' ng-click='$parent.flickr.showPhoto(this)' src="{{flickr.media.m}}"></a>
-              <a ui-sref-active='active' ui-sref='profile'>{{flickr.title}}</a>
-              <a href="{{flickr.link}}">{{flickr.link}}</a>
-              <li>{{flickr.published}}</li>
-              <a href="https://www.flickr.com/photos/{{flickr.author_id}}">Link to Authors Account</a>
-            </ul>
+            <div class="col-xs-4">
+              <a><img id='{{$index}}' class="thumbnail" ng-click='$parent.flickr.showPhoto(this)' src="{{flickr.media.m}}"></a>
+            </div>
+            <div class="col-xs-8">
+              <li><h1>{{flickr.title}}</h1></li>
+              <li><a href="{{flickr.link}}">View on flicker</a></li>
+              <li><a href="https://www.flickr.com/photos/{{flickr.author_id}}">Photo Author</a></li>
+              <li>Published on the {{flickr.key3.day}}/{{flickr.key3.date}}/{{flickr.key3.year}}
+               at {{flickr.key3.hours}}:{{flickr.key3.minutes}}</li>
+             </div>
+           </ul>
+         </div>
+       </div>
+
+       <div class='profile'  ng-show="flickr.photo">
+        <div class="col-md-4">
+          <a ui-sref-active='active' ui-sref='profile'><h1>{{flickr.title}}</h1></a>
+          <a href="https://www.flickr.com/photos/{{flickr.author_id}}">Photo Author</a>
+          <img class="thumbnail" src="{{flickr.photo}}">
+          {{flickr.date}}
+          {{flickr.tags}}
+        </div>
+
+        <div class="col-md-8">
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type </p>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type </p>
+          <a ng-click="flickr.photo = !flickr.photo"><button>Back</button></a>
         </div>
       </div>
     </div>
 
-
-    <div id='profile'  ng-show="flickr.photo">
-      <img src="{{flickr.photo}}">
-      <p>{{flickr.tags}}</p>
-      <a ng-click="flickr.photo = !flickr.photo"><button>Back</button></a>
-
-    </div>
   </div>
+</div>
+
+
 

@@ -1,18 +1,31 @@
 body {
   background-color: snow;
+  font-size:20px;
   div {
     li {
-      background: green;
+      list-style-type: none;
     }
-    background: red;
+    background-image:url('http://turbo.designwoop.com/uploads/2012/03/20_free_subtle_textures_floral_patterns.jpg');
   }
 }
 
-img {
-  height:250px;
-  width:250px;
+
+.profile {
+  img {
+    height:250px;
+    width:250px;
+    
+  }
+  height:400px;
+  width:100%;
 }
 
-ul li {
-  list-style-type: none
+/*.resize {
+width: 250px;
+height : auto;
 }
+
+.resize {
+width: auto;
+height : 250px;
+}*/

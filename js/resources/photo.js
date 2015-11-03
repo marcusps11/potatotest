@@ -1,24 +1,17 @@
-// angular
-// .module("flickrApp")
-// .factory("Photo", Photo);
+angular
+.module("flickrApp")
+.factory("Photo", Photo);
 
-// Photo.$inject = ['$resource']
+Photo.$inject = ['$resource']
 
-// function Photo($resource){
-//   var url = 'https://localhost:8000'
+function Photo($resource){
+  var PhotoResource = $resource('http://localhost:3000/photos/:id',
+  {id: '@_id'},
+  {'update': { method:'PUT' }}
+  );
 
-//   return $resource(
-//     url+'/photos/:id',
-//     {id: '@id'},
-//     { 'get':       { method: 'GET' },
-//     'save':      { method: 'POST' },
-//     'query':     { method: 'GET', isArray: true},
-//     'remove':    { method: 'DELETE' },
-//     'delete':    { method: 'DELETE' },
-//   }
-//   );
-// }
-
+  return PhotoResource;
+}
 
 // API key = f4ffb91934541dbc6af8c15f1e7ce2ca
 
