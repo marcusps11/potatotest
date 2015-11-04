@@ -16,8 +16,10 @@ body {
 #back {
   float: right; }
 
-#titleGo {
-  padding: 20px; }
+#title {
+  font-size: 60px;
+  margin-bottom: 80px;
+  text-align: center; }
 
 #text {
   margin-top: 40px; }

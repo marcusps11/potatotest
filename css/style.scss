@@ -1,5 +1,4 @@
 body {
-
   background-image: url('http://turbo.designwoop.com/uploads/2012/03/20_free_subtle_textures_floral_patterns.jpg');
   font-size:20px;
 }
@@ -27,8 +26,10 @@ body {
   float:right
 }
 
-#titleGo {
-  padding:20px
+#title  {
+  font-size:60px;
+  margin-bottom: 80px;
+  text-align: center
 }
 
 #text {
@@ -61,7 +62,6 @@ body {
       bottom: 217px;
       padding-right: 5px
     }
-    // background-image:url('http://turbo.designwoop.com/uploads/2012/03/20_free_subtle_textures_floral_patterns.jpg');
   }
   }
 }
