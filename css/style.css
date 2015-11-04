@@ -1,23 +1,13 @@
 body {
   background-image: url("http://turbo.designwoop.com/uploads/2012/03/20_free_subtle_textures_floral_patterns.jpg");
   font-size: 20px; }
-  body div li {
-    list-style-type: none;
-    text-overflow: ellipsis;
-    display: inline-block;
-    position: relative;
-    right: -300px;
-    top: -217px;
-    padding-right: 5px; }
 
 .profile {
   height: 100%;
   width: 100%; }
-  .profile ul {
-    margin-top: 0;
-    margin-bottom: -128px; }
-    .profile ul li {
-      display: block; }
+  .profile ul li {
+    display: block;
+    list-style-type: none; }
   .profile img {
     height: 250px;
     width: 250px;
@@ -32,9 +22,35 @@ body {
 #text {
   margin-top: 40px; }
 
-@media (min-width: 320px) {
-  .profile ul li {
-    color: green;
-    position: relative; } }
+.btn {
+  width: 100px;
+  height: 50px;
+  background-color: blue; }
+
+@media (min-width: 720px) {
+  body {
+    background-image: url("http://turbo.designwoop.com/uploads/2012/03/20_free_subtle_textures_floral_patterns.jpg");
+    font-size: 20px; }
+    body div li {
+      list-style-type: none;
+      text-overflow: ellipsis;
+      display: inline-block;
+      position: relative;
+      left: 300px;
+      bottom: 217px;
+      padding-right: 5px; } }
+@media (min-width: 720px) {
+  .profile {
+    height: 100%;
+    width: 100%; }
+    .profile ul {
+      margin-top: 0;
+      margin-bottom: -128px; }
+      .profile ul li {
+        display: block; }
+    .profile img {
+      height: 250px;
+      width: 250px;
+      display: block; } }
 
 /*# sourceMappingURL=style.css.map */

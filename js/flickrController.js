@@ -5,6 +5,7 @@ angular
 FlickrController.$inject = ['$http']
 
 
+
 function FlickrController($http){
   var self = this 
   self.photo = null
@@ -73,6 +74,6 @@ function FlickrController($http){
     self.all.push(data)
 
   }
-  
 }
+
 
