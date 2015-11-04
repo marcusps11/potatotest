@@ -2,17 +2,18 @@ angular
 .module('flickrApp')
 .controller('FlickrController', FlickrController);
 
-FlickrController.$inject = ['$http', 'Photo']
+FlickrController.$inject = ['$http']
 
 
-function FlickrController($http, Photo){
+function FlickrController($http){
   var self = this 
   self.photo = null
   self.tags = null
   self.title = null
   self.all = []
   self.author_id = null
-  self.date = [];
+  self.date = null;
+  self.link = null
 
 
   self.getDate = function(data){
@@ -42,6 +43,7 @@ function FlickrController($http, Photo){
         minutes, minutes
       }
     }
+    self.date = date
     self.newObject(data, date)
   }
 
@@ -51,7 +53,7 @@ function FlickrController($http, Photo){
     .then(function(response){
       var data = response.data.items
       angular.forEach(data, function(data, key){
-        self.getDate(data)
+      self.getDate(data)
       })
 
     })  
@@ -62,15 +64,15 @@ function FlickrController($http, Photo){
     self.tags = photo.flickr.tags
     self.title = photo.flickr.title
     self.author = photo.flickr.author_id
+    self.link = photo.flickr.link
     // console.log(self.photo)
   }
 
   self.newObject = function(data, date){
-  data['key3'] = date
-  console.log(data)
-  self.all.push(data)
+    data['key3'] = date
+    self.all.push(data)
 
-}
+  }
   
 }
 

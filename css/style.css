@@ -1,26 +1,40 @@
 body {
-  background-color: snow;
+  background-image: url("http://turbo.designwoop.com/uploads/2012/03/20_free_subtle_textures_floral_patterns.jpg");
   font-size: 20px; }
-  body div {
-    background-image: url("http://turbo.designwoop.com/uploads/2012/03/20_free_subtle_textures_floral_patterns.jpg"); }
-    body div li {
-      list-style-type: none; }
+  body div li {
+    list-style-type: none;
+    text-overflow: ellipsis;
+    display: inline-block;
+    position: relative;
+    right: -300px;
+    top: -217px;
+    padding-right: 5px; }
 
 .profile {
-  height: 400px;
+  height: 100%;
   width: 100%; }
+  .profile ul {
+    margin-top: 0;
+    margin-bottom: -128px; }
+    .profile ul li {
+      display: block; }
   .profile img {
     height: 250px;
-    width: 250px; }
+    width: 250px;
+    display: block; }
 
-/*.resize {
-width: 250px;
-height : auto;
-}
+#back {
+  float: right; }
 
-.resize {
-width: auto;
-height : 250px;
-}*/
+#titleGo {
+  padding: 20px; }
+
+#text {
+  margin-top: 40px; }
+
+@media (min-width: 320px) {
+  .profile ul li {
+    color: green;
+    position: relative; } }
 
 /*# sourceMappingURL=style.css.map */
