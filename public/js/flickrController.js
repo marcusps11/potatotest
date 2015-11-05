@@ -12,7 +12,7 @@ function FlickrController($http){
   self.tags = null
   self.title = null
   self.all = []
-  self.author_id = null
+  self.author = null
   self.date = null;
   self.link = null
 
